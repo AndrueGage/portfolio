@@ -28,7 +28,7 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <Navbar />
+        
         <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -37,6 +37,7 @@ export default function RootLayout({
           >
             {children}
           </ThemeProvider>
+          
       </body>
     </html>
   );
