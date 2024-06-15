@@ -35,14 +35,11 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
             <Navbar />
             <PageContainer>
               {children}
             </PageContainer>
-          </ThemeProvider>
-          
-          
+          </ThemeProvider> 
       </body>
     </html>
   );
