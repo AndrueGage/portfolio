@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { DarkModeToggle } from "./ui/darkmode-toggle";
+import { DarkModeToggle } from "../ui/darkmode-toggle";
 
 export default function Navbar() {
     return (
