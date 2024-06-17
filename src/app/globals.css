@@ -9,7 +9,7 @@
          URL: https://gradient.page */
   
       /* CSS: .bg-gradient { background: var(--gradient) } */
-      --gradient: linear-gradient(to top left,#00467F,#A5CC82);
+      --gradient: linear-gradient(to top left,#076585,#fff);
       --background: 220 100% 98.5%;
       --foreground: 220 10% 1%;
   
