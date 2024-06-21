@@ -5,7 +5,9 @@ import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider"
 import PageContainer from "@/components/custom/PageContainer";
 import Navbar from "@/components/custom/Navbar";
-import Transition from "@/components/custom/Transitions";
+import About from "./about/page";
+import Template from "./template";
+
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -38,7 +40,10 @@ export default function RootLayout({
           >
             <Navbar />
             <PageContainer>
+              <Template>
               {children}
+              <About />
+              </Template>
             </PageContainer>
           </ThemeProvider> 
       </body>
