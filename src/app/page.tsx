@@ -1,5 +1,5 @@
 import Picture from "@/components/custom/Image"
-import { motion } from "framer-motion"
+
 
 export default function Home() {
   return (

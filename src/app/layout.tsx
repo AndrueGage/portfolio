@@ -5,8 +5,7 @@ import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider"
 import PageContainer from "@/components/custom/PageContainer";
 import Navbar from "@/components/custom/Navbar";
-import { motion } from "framer-motion";
-
+import Transition from "@/components/custom/Transitions";
 
 const fontSans = FontSans({
   subsets: ["latin"],
