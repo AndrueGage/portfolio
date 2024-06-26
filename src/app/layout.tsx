@@ -5,9 +5,11 @@ import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider"
 import PageContainer from "@/components/custom/PageContainer";
 import Navbar from "@/components/custom/Navbar";
-import About from "./about/page";
+import About from "@/components/custom/About";
 import Template from "./template";
-
+import Projects from "@/components/custom/Projects";
+import Skills from "@/components/custom/Skills";
+import Contact from "@/components/custom/Contact";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -43,6 +45,9 @@ export default function RootLayout({
               <Template>
               {children}
               <About />
+              <Skills />
+              <Projects />
+              <Contact />
               </Template>
             </PageContainer>
           </ThemeProvider> 

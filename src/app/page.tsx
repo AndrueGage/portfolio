@@ -1,5 +1,5 @@
 import Picture from "@/components/custom/Image"
-import About from "./about/page";
+
 
 
 export default function Home() {
