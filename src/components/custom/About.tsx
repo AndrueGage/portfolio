@@ -2,7 +2,7 @@
 
 export default function About() {
     return (
-        <section>
+        <section id="about">
             <div>
                 <h1 className="text-4xl lg:text-6xl mb-4 font-extrabold">About</h1>
                 <p className="text-xl">  My name is Andrue and I am a full stack developer from Nashville, TN.<br></br>
