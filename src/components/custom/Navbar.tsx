@@ -15,6 +15,9 @@ export default function Navbar() {
                                 <Link href='#about'>About</Link>
                             </li>
                             <li className=" text-lg border-2 rounded-md border-solid border-black p-2">
+                                <Link href='#skills'>Skills</Link>
+                            </li>
+                            <li className=" text-lg border-2 rounded-md border-solid border-black p-2">
                                 <Link href='#projects'>Projects</Link>
                             </li>
                             <li className=" text-lg border-2 rounded-md border-solid border-black p-2">
