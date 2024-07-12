@@ -7,6 +7,10 @@ import NextJS from "../../../public/NextJS.svg"
 import ReactIcon from "../../../public/ReactIcon.svg"
 import TailwindCss from "../../../public/TailwindCSS.svg"
 import Typescript from "../../../public/Typescript.svg"
+import CSS from "../../../public/CSS.svg"
+import GraphQL from "../../../public/GraphQL.svg"
+import HTML from "../../../public/HTML.svg"
+import NodeJS from "../../../public/NodeJS.svg"
 
 const skills = {
     JavaScript: { src: JavaScript, alt: "JavaScript Icon", text: "JavaScript"},
@@ -17,6 +21,10 @@ const skills = {
     MongoDB: { src: MongoDB, alt: "MongoDB Icon", text: "MongoDB"},
     Typescript: { src: Typescript, alt: "Typescript Icon", text: "TypeScript" },
     Angular: { src: Angular, alt: "Angular Icon", text: "Angular" },
+    CSS: { src: CSS, alt: "CSS Icon", text: "CSS" },
+    GraphQL: { src: GraphQL, alt: "GraphQL Icon", text: "GraphQL" },
+    HTML: { src: HTML, alt: "HTML Icon", text: "HTML" },
+    NodeJS: { src: NodeJS, alt: "NodeJS Icon", text: "NodeJS" },
   };
 
   export default function Skills() {
