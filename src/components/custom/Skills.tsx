@@ -29,7 +29,7 @@ const skills = {
 
   export default function Skills() {
     return (
-      <section id="skills">
+      <section id="skills" className="mt-4">
         <h1 className="text-4xl lg:text-6xl mb-8 font-extrabold">Skills</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {Object.entries(skills).map(([key, { src, alt, text }]) => (
