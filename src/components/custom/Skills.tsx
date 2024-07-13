@@ -29,8 +29,8 @@ const skills = {
 
   export default function Skills() {
     return (
-      <section id="skills" className="p-4">
-        <h1 className="text-4xl lg:text-6xl mb-8 font-extrabold text-center">Skills</h1>
+      <section id="skills">
+        <h1 className="text-4xl lg:text-6xl mb-8 font-extrabold">Skills</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {Object.entries(skills).map(([key, { src, alt, text }]) => (
             <div key={key} className="bg-gradient p-6 rounded-lg shadow-md flex items-center justify-center h-32 object-contain">
