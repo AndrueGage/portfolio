@@ -4,7 +4,7 @@ import { DarkModeToggle } from "../ui/darkmode-toggle";
 export default function Navbar() {
     return (
         <header>
-            <div className="flex flex-wrap items-center mx-auto p-8 justify-end">
+            <div className="flex flex-wrap items-center mx-auto p-8 justify-center">
                 <nav>
                     <span>
                         <ul className="flex space-x-4 mt-4">
