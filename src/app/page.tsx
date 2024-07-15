@@ -10,7 +10,7 @@ export default function Home() {
           <h1 className="text-8xl mb-4 font-extrabold">Andrue Desmarais</h1>
         </div>
         <div>
-          <h2 className="font-black text-4xl">Full Stack Developer</h2>
+          <h2 className="font-black text-4xl ml-2">Full Stack Developer</h2>
         </div>
       </div>
       <div className="flex-auto">

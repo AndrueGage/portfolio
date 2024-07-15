@@ -6,7 +6,7 @@ interface PageContainerProps{
 
 export default function PageContainer({children}: PageContainerProps) {
     return(
-    <main className="p-10">
+    <main className="p-8">
         {children}
     </main>
 )}
