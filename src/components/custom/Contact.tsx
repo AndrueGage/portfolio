@@ -19,7 +19,7 @@ const Contact: FC = () => {
 
   return (
     <div>
-      <h1 className="text-4xl lg:text-6xl mb-4 font-extrabold" id='contact'>Contact</h1>
+      <h1 className="text-4xl lg:text-6xl mb-4 mt-4 font-extrabold" id='contact'>Contact</h1>
     
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className='mb-5'>
@@ -32,7 +32,7 @@ const Contact: FC = () => {
         <input
           type='text'
           placeholder='Full Name'
-          className='w-auto rounded-md border border-gray-300 bg-white py-3 px-6 text-lg font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
+          className='w-80 rounded-md border border-gray-300 bg-white py-3 px-6 text-lg font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
           {...register('name', { required: true })}
         />
       </div>
@@ -46,7 +46,7 @@ const Contact: FC = () => {
         <input
           type='email'
           placeholder='example@domain.com'
-          className='w-auto rounded-md border border-gray-300 bg-white py-3 px-6 text-lg font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
+          className='w-80 rounded-md border border-gray-300 bg-white py-3 px-6 text-lg font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
           {...register('email', { required: true })}
         />
       </div>
