@@ -14,7 +14,7 @@ const projects = {
 export default function Projects() {
     return (
         <section id="projects" className="mt-4">
-            <h1 className="text-4xl lg:text-6xl mb-4 font-extrabold">Projects</h1>
+            <h1 className="text-4xl lg:text-6xl mb-4 mt-8 font-extrabold">Projects</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {Object.entries(projects).map(([key, { src, alt, url }]) => (
                     <div key={key} className="relative w-full h-60 rounded-lg shadow-md">

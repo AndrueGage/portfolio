@@ -19,7 +19,7 @@ const Contact: FC = () => {
 
   return (
     <div>
-      <h1 className="text-4xl lg:text-6xl mb-4 mt-4 font-extrabold" id='contact'>Contact</h1>
+      <h1 className="text-4xl lg:text-6xl mb-4 mt-8 font-extrabold" id='contact'>Contact</h1>
     
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className='mb-5'>
