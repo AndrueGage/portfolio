@@ -23,6 +23,9 @@ export default function Navbar() {
                             <li className=" text-xl border-1 rounded-md border-solid border-black p-2 w-32 text-center bg-gradient">
                                 <Link href='#contact'>Contact</Link>
                             </li>
+                            <li className=" text-xl border-1 rounded-md border-solid border-black p-2 w-32 text-center bg-gradient">
+                            <a href="/Andrue_Desmarais_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+                            </li>
                             <DarkModeToggle />
                         </ul>
                     </span>
