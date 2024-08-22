@@ -35,13 +35,13 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
+        <Analytics />
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            <Analytics />
             <Navbar />
             <PageContainer>
               <Template>
