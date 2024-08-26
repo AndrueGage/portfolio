@@ -1,0 +1,24 @@
+[
+    {
+      "id": "project-1",
+      "title": "DB Easy",
+      "description": "This is a full-stack web application that seemlessly connects users to a MySQL database. Users input their dog's information into Dog Boarding Easy and effortlessly schedule boarding dates using our dynamic calendar.",
+      "image": "/public/DB_easy.png",
+      "technologies": ["JavaScript", "HandlebarsJS", "Tailwind CSS", "MySQL", "ExpressJS"]
+    },
+    {
+      "id": "project-2",
+      "title": "Employee Manager",
+      "description": "Description for project two.",
+      "image": "/images/project2.jpg",
+      "technologies": ["Node.js", "Express", "MongoDB"]
+    },
+    {
+      "id": "project-3",
+      "title": "Project Three",
+      "description": "Description for project three.",
+      "image": "/images/project3.jpg",
+      "technologies": ["Python", "Django", "PostgreSQL"]
+    }
+  ]
+  

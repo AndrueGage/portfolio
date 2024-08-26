@@ -2,6 +2,15 @@
   @tailwind components;
   @tailwind utilities;
 
+  .svg-icon {
+    fill: currentColor !important;
+  }
+  
+  .dark .svg-icon {
+    color: white !important;
+    fill: currentColor !important;
+  }
+
   @layer base {
     :root {
       /* Name: custom color palette
@@ -12,7 +21,7 @@
       --gradient: linear-gradient(to top left,#076585,#fff);
       --background: 220 100% 98.5%;
       --foreground: 220 10% 1%;
-  
+
       --muted: 220 10% 92.5%;
       --muted-foreground: 220 5% 42.5%;
   
@@ -41,6 +50,7 @@
   
       --radius: 0.5rem;
     }
+
     .dark {
       --gradient: linear-gradient(to top left,#434343,#000000);
 
@@ -72,8 +82,9 @@
       --input: 217.2 32.6% 17.5%;
       --ring: 212.7 26.8% 83.9%;    
     }
-  }
+   
 
+  }
   @layer base {
     * {
       @apply border-border;

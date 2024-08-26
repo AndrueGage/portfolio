@@ -11,6 +11,7 @@ import Template from "./template";
 import Projects from "@/components/custom/Projects";
 import Skills from "@/components/custom/Skills";
 import Contact from "@/components/custom/Contact";
+import Footer from "@/components/custom/Footer";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -50,6 +51,7 @@ export default function RootLayout({
               <Skills />
               <Projects />
               <Contact />
+              <Footer />
               </Template>
             </PageContainer>
           </ThemeProvider> 
