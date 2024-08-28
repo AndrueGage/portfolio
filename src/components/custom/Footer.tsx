@@ -15,8 +15,8 @@ export default function Footer() {
         <section className="mt-10">
             <div className="grid grid-cols-1 sm:grid-col-2 lg:grid-cols-3 gap-10">
                 {Object.entries(svgLinks).map(([key, { src, alt, url }]) => (
-                    <a href={url} target='_blank'>
-                        <div key={key} className="bg-gradient p-6 shadow-md flex items-center justify-center h-14 rounded-lg">
+                    <a href={url} key={key} target='_blank'>
+                        <div className="bg-gradient p-6 shadow-md flex items-center justify-center h-14 rounded-lg">
                             <div className="h-10 w-10 relative">
                                 <Image priority src={src} alt={alt} layout="fill" objectFit="contain" className="svg-icon fill-current text-black dark:text-white" />
                             </div>
