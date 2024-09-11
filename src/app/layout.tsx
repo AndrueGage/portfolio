@@ -12,6 +12,7 @@ import Projects from "@/components/custom/Projects";
 import Skills from "@/components/custom/Skills";
 import Contact from "@/components/custom/Contact";
 import Footer from "@/components/custom/Footer";
+import CommitCard from "@/components/custom/CommitCard";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout({
         )}
       >
         <Analytics />
+        
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -48,13 +50,15 @@ export default function RootLayout({
               <Template>
               {children}
               <About />
+              <CommitCard />
               <Skills />
               <Projects />
               <Contact />
               <Footer />
               </Template>
             </PageContainer>
-          </ThemeProvider> 
+          </ThemeProvider>
+           
       </body>
     </html>
   );
