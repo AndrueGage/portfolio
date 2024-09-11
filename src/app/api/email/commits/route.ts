@@ -2,8 +2,8 @@
 import { NextResponse } from 'next/server';
 import axios from 'axios';
 
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const GITHUB_USERNAME = process.env.GITHUB_USER;
+const API_TOKEN = process.env.API_TOKEN;
+const API_USERNAME = process.env.API_USER;
 
 const getWeekDates = () => {
   const now = new Date();
@@ -24,9 +24,9 @@ export async function GET() {
   const { startDate, endDate } = getWeekDates();
 
   try {
-    const repoResponse = await axios.get(`https://api.github.com/users/${GITHUB_USERNAME}/repos`, {
+    const repoResponse = await axios.get(`https://api.github.com/users/${API_USERNAME}/repos`, {
       headers: {
-        Authorization: `token ${GITHUB_TOKEN}`,
+        Authorization: `token ${API_TOKEN}`,
       },
       
     });
@@ -38,10 +38,10 @@ export async function GET() {
     
     for (const repo of repos) {
       const commitsResponse = await axios.get(
-        `https://api.github.com/repos/${GITHUB_USERNAME}/${repo.name}/commits?since=${startDate}&until=${endDate}`,
+        `https://api.github.com/repos/${API_USERNAME}/${repo.name}/commits?since=${startDate}&until=${endDate}`,
         {
           headers: {
-            Authorization: `token ${GITHUB_TOKEN}`,
+            Authorization: `token ${API_TOKEN}`,
           },
         }
       );
