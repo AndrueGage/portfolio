@@ -2,7 +2,7 @@
 import { NextResponse } from 'next/server';
 import axios from 'axios';
 
-const API_TOKEN = process.env.API_TOKEN;
+const API = process.env.API;
 const API_USERNAME = process.env.API_USER;
 
 const getWeekDates = () => {
@@ -26,7 +26,7 @@ export async function GET() {
   try {
     const repoResponse = await axios.get(`https://api.github.com/users/${API_USERNAME}/repos`, {
       headers: {
-        Authorization: `token ${API_TOKEN}`,
+        Authorization: `token ${API}`,
       },
       
     });
@@ -41,7 +41,7 @@ export async function GET() {
         `https://api.github.com/repos/${API_USERNAME}/${repo.name}/commits?since=${startDate}&until=${endDate}`,
         {
           headers: {
-            Authorization: `token ${API_TOKEN}`,
+            Authorization: `token ${API}`,
           },
         }
       );
