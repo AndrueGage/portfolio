@@ -6,13 +6,6 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Analytics } from "@vercel/analytics/react"
 import PageContainer from "@/components/custom/PageContainer";
 import Navbar from "@/components/custom/Navbar";
-import About from "@/components/custom/About";
-import Template from "./template";
-import Projects from "@/components/custom/Projects";
-import Skills from "@/components/custom/Skills";
-import Contact from "@/components/custom/Contact";
-import Footer from "@/components/custom/Footer";
-import CommitCard from "@/components/custom/CommitCard";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -47,15 +40,10 @@ export default function RootLayout({
           >
             <Navbar />
             <PageContainer>
-              <Template>
+              {/* <Template> */}
               {children}
-              <About />
-              <CommitCard />
-              <Skills />
-              <Projects />
-              <Contact />
-              <Footer />
-              </Template>
+              
+              {/* </Template> */}
             </PageContainer>
           </ThemeProvider>
            

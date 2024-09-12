@@ -2,12 +2,13 @@ import Image from "next/image"
 import DB_easy from "../../../public/DB_easy.png"
 import employee_manager from "../../../public/employee_manager.png"
 import zestyClip from "../../../public/zestyClip.png"
-import { Link } from "lucide-react";
+import Link from "next/link"
+
 
 const projects = {
-    DB_easy: { src: DB_easy, alt: "A screenshot of the project homescreen,", url:"https://github.com/Brady-hash/DB-Easy" },
-    employee_manager: { src: employee_manager, alt: "a screenshot from my employee manager project", url:"https://github.com/AndrueGage/employee-tracker" },
-    zestyClip: { src: zestyClip, alt: "a screenshot of the zestybytes homescreen", url: "https://github.com/warhawk1950/Zesty-Bytes" }
+    DB_easy: { src: DB_easy, alt: "A screenshot of the project homescreen,", url:"projects/DB-Easy" },
+    employee_manager: { src: employee_manager, alt: "a screenshot from my employee manager project", url:"projects/employee-tracker" },
+    zestyClip: { src: zestyClip, alt: "a screenshot of the zestybytes homescreen", url: "projects/Zesty-Bytes" }
 };
 
 
@@ -18,9 +19,9 @@ export default function Projects() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {Object.entries(projects).map(([key, { src, alt, url }]) => (
                     <div key={key} className="relative w-full h-60 rounded-lg shadow-md">
-                        <a href={url} target="_blank">
+                        <Link href={url} target="_blank">
                         <Image priority src={src} alt={alt} layout="fill" objectFit="fill" className="rounded-lg" />
-                        </a>
+                        </Link>
                     </div>
                 ))}
             </div>

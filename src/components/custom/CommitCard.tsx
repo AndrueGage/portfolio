@@ -1,6 +1,5 @@
-'use client';
+'use client'
 
-import { useEffect, useState } from 'react';
 import {
   LineChart,
   CartesianGrid,
@@ -21,32 +20,7 @@ import {
   ChartTooltipContent,
 } from '@/components/ui/chart';
 
-const CommitCard = () => {
-  const [commitCount, setCommitCount] = useState(0);
-  const [weekData, setWeekData] = useState<{ date: string; count: number }[]>([]);
-
-  const fetchCommits = async () => {
-    try {
-      const response = await fetch('/api/email/commits/');
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      const data = await response.json();
-      setCommitCount(data.totalCommits);
-
-      const formattedData = data.weekData.map((commit: { date: string; count: number }) => ({
-        date: commit.date,
-        count: commit.count,
-      }));
-      setWeekData(formattedData);
-    } catch (error) {
-      console.error('Error fetching commits:', error);
-    }
-  };
-
-  useEffect(() => {
-    fetchCommits(); 
-  }, []);
+export default function CommitCard({data} :any) {
 
   return (
     <Card className="flex flex-col lg:max-w-md">
@@ -54,7 +28,7 @@ const CommitCard = () => {
         <div>
           <CardDescription>Github</CardDescription>
           <CardTitle className="flex items-baseline gap-1 text-4xl tabular-nums">
-            {commitCount}
+            {data.totalCommits}
             <span className="text-sm font-normal tracking-normal text-muted-foreground">
               commits
             </span>
@@ -74,7 +48,7 @@ const CommitCard = () => {
           <LineChart
             width={400}
             height={200}
-            data={weekData}
+            data={data.formattedData}
             margin={{
               left: 14,
               right: 14,
@@ -134,4 +108,4 @@ const CommitCard = () => {
   );
 };
 
-export default CommitCard;
+
