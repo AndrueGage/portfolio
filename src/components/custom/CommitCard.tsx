@@ -46,9 +46,6 @@ const CommitCard = () => {
 
   useEffect(() => {
     fetchCommits(); 
-    const intervalId = setInterval(fetchCommits, 43200000); 
-
-    return () => clearInterval(intervalId); 
   }, []);
 
   return (
