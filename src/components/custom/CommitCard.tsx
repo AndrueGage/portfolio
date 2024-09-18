@@ -30,7 +30,7 @@ export default function CommitCard({data} :any) {
           <CardTitle className="flex items-baseline gap-1 text-4xl tabular-nums">
             {data.totalCommits}
             <span className="text-sm font-normal tracking-normal text-muted-foreground">
-              commits
+              Commits this week
             </span>
           </CardTitle>
         </div>
