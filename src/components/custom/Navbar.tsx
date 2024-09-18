@@ -12,15 +12,6 @@ export default function Navbar() {
                                 <Link href='/'>Home</Link>
                             </li>
                             <li className="text-lg md:text-xl border rounded-md border-solid border-black p-2 w-full md:w-32 text-center bg-gradient">
-                                <Link href='#about'>About</Link>
-                            </li>
-                            <li className="text-lg md:text-xl border rounded-md border-solid border-black p-2 w-full md:w-32 text-center bg-gradient">
-                                <Link href='#skills'>Skills</Link>
-                            </li>
-                            <li className="text-lg md:text-xl border rounded-md border-solid border-black p-2 w-full md:w-32 text-center bg-gradient">
-                                <Link href='#projects'>Projects</Link>
-                            </li>
-                            <li className="text-lg md:text-xl border rounded-md border-solid border-black p-2 w-full md:w-32 text-center bg-gradient">
                                 <Link href='#contact'>Contact</Link>
                             </li>
                             <li className="text-lg md:text-xl border rounded-md border-solid border-black p-2 w-full md:w-32 text-center bg-gradient">
