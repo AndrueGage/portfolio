@@ -11,16 +11,16 @@ import { Contact } from "lucide-react"
 export const description = "A collection of health charts."
 
 export default async function Page() {
-  const response = await fetch('http://localhost:3000/api/commits/',{cache: 'no-cache'});
+  const response = await fetch('http://localhost:3000/api/commits/', { cache: 'no-cache' });
   const chartData = await response.json();
   return (
-    <div className="chart-wrapper mx-auto flex max-w-6xl flex-col flex-wrap items-start justify-center gap-6 p-6 sm:flex-row sm:p-8">
+    <>
       <About />
       <Skills />
-      <CommitCard data={chartData}/>
+      <CommitCard data={chartData} />
       <Projects />
       {/* <Contact /> */}
-    </div>
+    </>
 
     // <div className="chart-wrapper mx-auto flex max-w-6xl flex-col flex-wrap items-start justify-center gap-6 p-6 sm:flex-row sm:p-8">
     //   <div className="grid w-full flex-1 gap-6 lg:max-w-[20rem]">

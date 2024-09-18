@@ -31,22 +31,21 @@ export default function RootLayout({
         )}
       >
         <Analytics />
-        
+        <Navbar />
+        <div className="chart-wrapper mx-auto flex max-w-6xl flex-col flex-wrap items-start justify-center gap-6 p-6 sm:flex-row sm:p-8">
+
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            <Navbar />
-            <PageContainer>
-              {/* <Template> */}
-              {children}
-              
-              {/* </Template> */}
-            </PageContainer>
+            {/* <Template> */}
+            {children}
+            {/* </Template> */}
           </ThemeProvider>
-           
+        </div>
+
       </body>
     </html>
   );
