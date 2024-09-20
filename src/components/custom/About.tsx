@@ -9,14 +9,16 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import Footer from "./Footer" 
+import Picture from "./Image"
 
 export default function About() {
     return (
-        <section id="about">
-            <div className="sm:text-center lg:text-left md:text-left relative"> 
-                <Card className="lg:max-w-md">
+
+                <Card className="lg:max-w-md" x-chunk="charts-01-chunk-0">
                     <CardHeader className="space-y-0 pb-2">
-                        <CardDescription></CardDescription>
+                        <CardDescription>
+                            <Picture />
+                        </CardDescription>
                         <CardTitle className="text-6xl font-bold">Andrue Desmarais</CardTitle>
                     </CardHeader>
                     <CardContent>
@@ -32,10 +34,12 @@ export default function About() {
                         <CardDescription>
                             Solving problems and creating solutions.
                         </CardDescription>
-                        <Footer /> 
+                        <div>
+                        <Footer />
+                        </div>
                     </CardFooter>
+                     
                 </Card>
-            </div>
-        </section>
+
     )
 }

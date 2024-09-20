@@ -30,8 +30,7 @@ const skills = {
 
 export default function Skills() {
   return (
-    <>
-      <Card className="mx-auto max-w-sm">
+      <Card className="lg:max-w-md">
         <CardHeader>
           <CardTitle className="text-xl lg:text-4xl mb-8 font-extrabold">Skills</CardTitle>
         </CardHeader>
@@ -51,7 +50,6 @@ export default function Skills() {
           </div>
         </CardContent>
       </Card>
-    </>
   );
 }
 

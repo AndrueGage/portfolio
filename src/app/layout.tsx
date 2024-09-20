@@ -26,14 +26,12 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen bg-gradient font-sans antialiased min-w-96",
+          "bg-gradient font-sans antialiased",
           fontSans.variable
         )}
       >
         <Analytics />
         <Navbar />
-        <div className="chart-wrapper mx-auto flex max-w-6xl flex-col flex-wrap items-start justify-center gap-6 p-6 sm:flex-row sm:p-8">
-
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -44,9 +42,7 @@ export default function RootLayout({
             {children}
             {/* </Template> */}
           </ThemeProvider>
-        </div>
-
-      </body>
-    </html>
+    </body>
+    </html >
   );
 }
