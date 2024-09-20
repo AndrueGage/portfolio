@@ -11,10 +11,10 @@ const svgLinks = {
 
 export default function Footer() {
     return (
-        <div className="absolute bottom-0 right-0 flex gap-2 p-4"> {/* Positioned in the bottom right */}
+        <div className="bottom-0 right-0 flex gap-2 "> 
             {Object.entries(svgLinks).map(([key, { src, alt, url }]) => (
                 <a href={url} key={key} target="_blank" rel="noopener noreferrer">
-                    <div className="h-6 w-6 relative">
+                    <div className="h-6 w-8 relative">
                         <Image priority src={src} alt={alt} layout="fill" objectFit="contain" />
                     </div>
                 </a>
