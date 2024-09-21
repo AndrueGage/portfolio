@@ -15,19 +15,20 @@ export default async function Page() {
   return (
 
     <div className="chart-wrapper mx-auto flex max-w-6xl flex-col flex-wrap sm:items-start sm:justify-center gap-6 p-6 sm:flex-row sm:p-8">
-      <div className="grid w-full gap-6 sm:grid-cols-2 lg:w-full lg:grid-cols-3 xl:max-w-[100%] flex-col">
-        <div>
-          <About />
-        </div>
-        <div>
-          <Skills />
-        </div>
+      <div className="grid w-full gap-2 sm:grid-cols-2 lg:w-full lg:grid-cols-3 xl:max-w-[100%] flex-col">
+        
+        <About />
 
         <Projects />
-        <CommitCard data={chartData} />
+
+        <Skills />
+
+        <div>
+          <CommitCard data={chartData} />
+        </div>
         {/* <Contact /> */}
       </div>
-     </div>
+    </div>
   )
 }
 

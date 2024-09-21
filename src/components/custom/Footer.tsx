@@ -11,7 +11,7 @@ const svgLinks = {
 
 export default function Footer() {
     return (
-        <div className="bottom-0 right-0 flex gap-2 "> 
+        <div className="bottom-0 right-0 flex gap-2 mt-2 "> 
             {Object.entries(svgLinks).map(([key, { src, alt, url }]) => (
                 <a href={url} key={key} target="_blank" rel="noopener noreferrer">
                     <div className="h-6 w-8 relative">

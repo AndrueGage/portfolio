@@ -18,12 +18,12 @@ export default function Projects() {
         <>
             <Card className="lg:max-w-md">
                 <CardHeader>
-                    <CardTitle className="text-xl lg:text-4xl mb-8 font-extrabold">Projects</CardTitle>
+                    <CardTitle className="text-xl lg:text-4xl font-extrabold">Projects</CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="row  ">
                         {Object.entries(projects).map(([key, { src, alt, url }]) => (
-                            <div key={key} className="relative w-full h-60 rounded-lg shadow-md">
+                            <div key={key} className="relative w-full h-30 rounded-lg">
                                 <Link href={url} target="_blank">
                                     <Image priority src={src} alt={alt}  className="rounded-lg" />
                                 </Link>
