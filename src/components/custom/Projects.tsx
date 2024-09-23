@@ -21,11 +21,11 @@ export default function Projects() {
                     <CardTitle className="text-xl lg:text-4xl font-extrabold">Projects</CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <div className="row  ">
+                    <div className="row">
                         {Object.entries(projects).map(([key, { src, alt, url }]) => (
                             <div key={key} className="relative w-full h-30 rounded-lg">
                                 <Link href={url} target="_blank">
-                                    <Image priority src={src} alt={alt}  className="rounded-lg" />
+                                    <Image src={src} alt={alt} className="rounded-lg" />
                                 </Link>
                             </div>
                         ))}

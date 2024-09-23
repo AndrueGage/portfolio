@@ -6,6 +6,7 @@ import {
   YAxis,
   XAxis,
   Line,
+  ResponsiveContainer
 } from 'recharts';
 import {
   Card,
@@ -21,9 +22,8 @@ import {
 } from '@/components/ui/chart';
 
 export default function CommitCard({data} :any) {
-
   return (
-    <Card className="flex flex-col lg:max-w-md">
+    <Card className="sm:col-span-2 sm:h-[200px] md:h-[300px] lg:h-[350px] max-w-4xl mb-6 flex flex-col">
       <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2 [&>div]:flex-1">
         <div>
           <CardDescription>Github</CardDescription>
@@ -35,7 +35,7 @@ export default function CommitCard({data} :any) {
           </CardTitle>
         </div>
       </CardHeader>
-      <CardContent className="flex flex-1 items-center">
+      <CardContent className="flex-1 p-0">
         <ChartContainer
           config={{
             resting: {
@@ -43,69 +43,70 @@ export default function CommitCard({data} :any) {
               color: 'hsl(var(--chart-1))',
             },
           }}
-          className="w-full"
+          className="w-full h-full"
         >
-          <LineChart
-            width={400}
-            height={200}
-            data={data.formattedData}
-            margin={{
-              left: 14,
-              right: 14,
-              top: 10,
-            }}
-          >
-            <CartesianGrid
-              strokeDasharray="4 4"
-              vertical={false}
-              stroke="hsl(var(--muted-foreground))"
-              strokeOpacity={0.5}
-            />
-            <YAxis hide domain={['dataMin - 10', 'dataMax + 10']} />
-            <XAxis
-              dataKey="date"
-              tickLine={false}
-              axisLine={false}
-              tickMargin={8}
-              tickFormatter={(value) => {
-                return new Date(value).toLocaleDateString('en-US', {
-                  weekday: 'short',
-                });
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              data={data.formattedData}
+              margin={{
+                top: 10,
+                right: 10,
+                left: 10,
+                bottom: 130,
               }}
-            />
-            <Line
-              dataKey="count"
-              type="natural"
-              fill="var(--color-resting)"
-              stroke="var(--color-resting)"
-              strokeWidth={2}
-              dot={false}
-              activeDot={{
-                fill: 'var(--color-resting)',
-                stroke: 'var(--color-resting)',
-                r: 4,
-              }}
-            />
-            <ChartTooltip
-              content={(
-                <ChartTooltipContent
-                  indicator="line"
-                  labelFormatter={(value) => {
-                    return new Date(value).toLocaleDateString('en-US', {
-                      day: 'numeric',
-                      month: 'long',
-                      year: 'numeric',
-                    });
-                  }}
-                />
-              )}
-              cursor={false}
-            />
-          </LineChart>
+            >
+              <CartesianGrid
+                strokeDasharray="3 3"
+                vertical={false}
+                stroke="hsl(var(--muted-foreground))"
+                strokeOpacity={0.5}
+              />
+              <YAxis 
+                hide 
+                domain={['dataMin - 1', 'dataMax + 1']} 
+              />
+              <XAxis
+                dataKey="date"
+                tickLine={false}
+                axisLine={false}
+                tickMargin={10}
+                tickFormatter={(value) => {
+                  return new Date(value).toLocaleDateString('en-US', {
+                    weekday: 'short',
+                  });
+                }}
+              />
+              <Line
+                dataKey="count"
+                type="monotone"
+                stroke="var(--color-resting)"
+                strokeWidth={2}
+                dot={false}
+                activeDot={{
+                  fill: 'var(--color-resting)',
+                  stroke: 'var(--color-resting)',
+                  r: 6,
+                }}
+              />
+              <ChartTooltip
+                content={(
+                  <ChartTooltipContent
+                    indicator="line"
+                    labelFormatter={(value) => {
+                      return new Date(value).toLocaleDateString('en-US', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric',
+                      });
+                    }}
+                  />
+                )}
+                cursor={false}
+              />
+            </LineChart>
+          </ResponsiveContainer>
         </ChartContainer>
       </CardContent>
     </Card>
   );
 };
-
-

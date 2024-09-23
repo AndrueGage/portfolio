@@ -4,10 +4,10 @@ export default function Picture() {
   return (
     <Image
       src="/andrue.png"
-      width={250}
-      height={0}
+      width={150}
+      height={100}
       alt="A picture of me and my dog"
-      className='border-solid border-black border-2 rounded-xl object-cover'
+      className='rounded-full'
     />
   )
 }
