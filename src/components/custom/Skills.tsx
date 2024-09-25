@@ -14,41 +14,44 @@ import NodeJS from "/public/NodeJS.svg"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../ui/card"
 
 const skills = {
-  JavaScript: { src: JavaScript, alt: "JavaScript Icon" },
-  ReactIcon: { src: ReactIcon, alt: "React Icon" },
-  NextJS: { src: NextJS, alt: "NextJS Icon" },
-  TailwindCss: { src: TailwindCss, alt: "TailwindCSS Icon" },
-  MySql: { src: MySql, alt: "MySQL Icon" },
-  MongoDB: { src: MongoDB, alt: "MongoDB Icon" },
-  Typescript: { src: Typescript, alt: "Typescript Icon" },
-  Angular: { src: Angular, alt: "Angular Icon" },
-  CSS: { src: CSS, alt: "CSS Icon", text: "CSS" },
-  GraphQL: { src: GraphQL, alt: "GraphQL Icon" },
-  HTML: { src: HTML, alt: "HTML Icon" },
-  NodeJS: { src: NodeJS, alt: "NodeJS Icon" },
+  JavaScript: { src: JavaScript, alt: "JavaScript Icon", name: "JavaScript" },
+  ReactIcon: { src: ReactIcon, alt: "React Icon", name: "React" },
+  NextJS: { src: NextJS, alt: "NextJS Icon", name: "Next.js" },
+  TailwindCss: { src: TailwindCss, alt: "TailwindCSS Icon", name: "Tailwind" },
+  MySql: { src: MySql, alt: "MySQL Icon", name: "MySQL" },
+  MongoDB: { src: MongoDB, alt: "MongoDB Icon", name: "MongoDB" },
+  Typescript: { src: Typescript, alt: "Typescript Icon", name: "TypeScript" },
+  Angular: { src: Angular, alt: "Angular Icon", name: "Angular" },
+  CSS: { src: CSS, alt: "CSS Icon", name: "CSS" },
+  GraphQL: { src: GraphQL, alt: "GraphQL Icon", name: "GraphQL" },
+  HTML: { src: HTML, alt: "HTML Icon", name: "HTML" },
+  NodeJS: { src: NodeJS, alt: "NodeJS Icon", name: "Node.js" },
 };
 
 export default function Skills() {
   return (
-      <Card className="lg:max-w-md rounded-xl">
-        <CardHeader>
-          <CardTitle className="text-xl lg:text-4xl font-bold tracking-[0.025rem]">Skills</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-4 sm:grid-cols-4 gap-4">
-            {Object.entries(skills).map(([key, { src, alt }]) => (
-              <div key={key} className="relative h-16 w-16"> 
+    <Card className="lg:max-w-md rounded-xl">
+      <CardHeader>
+        <CardTitle className="text-xl lg:text-4xl font-bold tracking-[0.025rem]">Skills</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
+          {Object.entries(skills).map(([key, { src, alt, name }]) => (
+            <div key={key} className="flex flex-col items-center">
+              <div className="relative h-14 w-16 border bg-gradient rounded overflow-hidden mb-2">
                 <Image
                   priority
                   src={src}
                   alt={alt}
                   layout="fill"
+                  className="p-2"
                 />
               </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
+              <span className="text-xs text-center">{name}</span>
+            </div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
   );
 }
-
