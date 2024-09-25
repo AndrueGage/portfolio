@@ -31,7 +31,6 @@ export default function RootLayout({
         )}
       >
         <Analytics />
-        <Navbar />
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

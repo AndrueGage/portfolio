@@ -30,12 +30,12 @@ const skills = {
 
 export default function Skills() {
   return (
-      <Card className="lg:max-w-md">
+      <Card className="lg:max-w-md rounded-xl">
         <CardHeader>
-          <CardTitle className="text-xl lg:text-4xl font-extrabold">Skills</CardTitle>
+          <CardTitle className="text-xl lg:text-4xl font-bold tracking-[0.025rem]">Skills</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+          <div className="grid grid-cols-4 sm:grid-cols-4 gap-4">
             {Object.entries(skills).map(([key, { src, alt }]) => (
               <div key={key} className="relative h-16 w-16"> 
                 <Image

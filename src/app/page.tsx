@@ -12,20 +12,21 @@ export const description = "A collection of health charts."
 export default async function Page() {
   const response = await fetch('http://localhost:3000/api/commits/', { cache: 'no-cache' });
   const chartData = await response.json();
-  return (
 
+  return (
     <div className="chart-wrapper mx-auto flex max-w-6xl flex-col flex-wrap sm:items-start sm:justify-center gap-6 p-6 sm:flex-row sm:p-8">
-    <div className="grid w-full gap-6 sm:grid-cols-2 lg:w-full lg:grid-cols-3 xl:max-w-[100%]">
-      <div className="sm:col-span-2 lg:col-span-2 flex flex-col gap-6">
-        <About />
-        <CommitCard data={chartData} />
-      </div>
-      <div className="sm:col-span-2 lg:col-span-1 flex flex-col gap-6">
-        <Projects />
-        <Skills />
+      <div className="grid w-full gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:max-w-full">
+        <div className="sm:col-span-2 lg:col-span-2 flex flex-col">
+          <About />
+          <div className="flex flex-col lg:flex-row gap-6">
+            <CommitCard data={chartData} className="flex-1" />
+            <Skills />
+          </div>
+        </div>
+        <div className="sm:col-span-2 lg:col-span-1 flex flex-col">
+          <Projects />
+        </div>
       </div>
     </div>
-  </div>
-)
+  );
 }
-

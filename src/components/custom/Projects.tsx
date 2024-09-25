@@ -1,7 +1,7 @@
 import Image from "next/image"
-import DB_easy from "../../../public/DB_easy.png"
-import employee_manager from "../../../public/employee_manager.png"
-import zestyClip from "../../../public/zestyClip.png"
+import DB_easy from "/public/DB_easy.png"
+import employee_manager from "/public/employee_manager.png"
+import zestyClip from "/public/zestyClip.png"
 import Link from "next/link"
 import { Card, CardHeader, CardTitle, CardContent } from "../ui/card"
 
@@ -13,19 +13,23 @@ const projects = {
 };
 
 
+
 export default function Projects() {
     return (
         <>
-            <Card className="lg:max-w-md">
+            <Card className="lg:max-w-md rounded-xl">
                 <CardHeader>
-                    <CardTitle className="text-xl lg:text-4xl font-extrabold">Projects</CardTitle>
+                    <CardTitle className="text-xl tracking-[0.025rem] lg:text-4xl font-bold">Projects</CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <div className="row">
+                    <div className="grid grid-cols-1 sm:grid-cols-1 gap-4 rounded-lg">
                         {Object.entries(projects).map(([key, { src, alt, url }]) => (
-                            <div key={key} className="relative w-full h-30 rounded-lg">
+                            <div key={key} className="relative w-full  rounded-lg">
                                 <Link href={url} target="_blank">
-                                    <Image src={src} alt={alt} className="rounded-lg" />
+                                        <Image src={src} 
+                                        alt={alt} 
+                                        className="w-full h-full object-cover"
+                                        />          
                                 </Link>
                             </div>
                         ))}

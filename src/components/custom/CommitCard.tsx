@@ -23,7 +23,7 @@ import {
 
 export default function CommitCard({data} :any) {
   return (
-    <Card className="sm:col-span-2 sm:h-[200px] md:h-[300px] lg:h-[350px] max-w-4xl mb-6 flex flex-col">
+    <Card className="sm:col-span-2 w-full lg:max-w-[358px]  rounded-xl flex flex-col">
       <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2 [&>div]:flex-1">
         <div>
           <CardDescription>Github</CardDescription>
@@ -52,7 +52,7 @@ export default function CommitCard({data} :any) {
                 top: 10,
                 right: 10,
                 left: 10,
-                bottom: 130,
+                bottom: 30,
               }}
             >
               <CartesianGrid
@@ -109,4 +109,4 @@ export default function CommitCard({data} :any) {
       </CardContent>
     </Card>
   );
-};
+}
