@@ -5,7 +5,7 @@ import Projects from "@/components/custom/Projects"
 import Skills from "@/components/custom/Skills"
 
 export default async function Page() {
-  const response = await fetch('/api/commits/', { cache: 'no-cache' });
+  const response = await fetch('https://andruedesmarais.me/api/commits/', { cache: 'no-cache' });
   const chartData = await response.json();
 
   return (
