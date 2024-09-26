@@ -1,13 +1,8 @@
-// import Picture from "@/components/custom/Image"
-// move layout to page.tsx (this will be a server component that has client components in it api call fed as prop to chart component)
 
 import About from "@/components/custom/About"
 import CommitCard from "@/components/custom/CommitCard"
 import Projects from "@/components/custom/Projects"
 import Skills from "@/components/custom/Skills"
-import { Contact } from "lucide-react"
-
-export const description = "A collection of health charts."
 
 export default async function Page() {
   const response = await fetch('http://localhost:3000/api/commits/', { cache: 'no-cache' });
