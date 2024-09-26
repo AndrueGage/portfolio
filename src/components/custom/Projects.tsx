@@ -7,9 +7,9 @@ import { Card, CardHeader, CardTitle, CardContent } from "../ui/card"
 
 
 const projects = {
-    DB_easy: { src: DB_easy, alt: "A screenshot of the project homescreen,", url: "projects/DB-Easy" },
-    employee_manager: { src: employee_manager, alt: "a screenshot from my employee manager project", url: "projects/employee-tracker" },
-    zestyClip: { src: zestyClip, alt: "a screenshot of the zestybytes homescreen", url: "projects/Zesty-Bytes" }
+    DB_easy: { src: DB_easy, alt: "A screenshot of the project homescreen,", url: "projects/DB-Easy", name: "Dog Boarding Easy" },
+    employee_manager: { src: employee_manager, alt: "a screenshot from my employee manager project", url: "projects/employee-tracker", name: "Employee Tracker" },
+    zestyClip: { src: zestyClip, alt: "a screenshot of the zestybytes homescreen", url: "projects/Zesty-Bytes", name: "Zesty Bytes" }
 };
 
 
@@ -23,14 +23,17 @@ export default function Projects() {
                 </CardHeader>
                 <CardContent>
                     <div className="grid grid-cols-1 sm:grid-cols-1 gap-4 rounded-lg">
-                        {Object.entries(projects).map(([key, { src, alt, url }]) => (
-                            <div key={key} className="relative w-full  rounded-lg">
-                                <Link href={url} target="_blank">
-                                        <Image src={src} 
-                                        alt={alt} 
-                                        className="w-full h-full object-cover"
-                                        />          
-                                </Link>
+                        {Object.entries(projects).map(([key, { src, alt, url, name }]) => (
+                            <div key={key} className="relative">
+                                <div className="relative bg-gradient overflow-hidden">
+                                    <Link href={url} target="_blank">
+                                        <Image src={src}
+                                            alt={alt}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </Link>
+                                    <span className="text-md flex justify-center">{name}</span>
+                                </div>
                             </div>
                         ))}
                     </div>
