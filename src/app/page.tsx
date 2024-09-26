@@ -10,7 +10,7 @@ import { Contact } from "lucide-react"
 export const description = "A collection of health charts."
 
 export default async function Page() {
-  const response = await fetch('http://localhost:3000/api/commits/', { cache: 'no-cache' });
+  const response = await fetch('/api/commits/', { cache: 'no-cache' });
   const chartData = await response.json();
 
   return (
