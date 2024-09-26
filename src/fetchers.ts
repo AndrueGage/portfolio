@@ -1,4 +1,3 @@
-import { NextResponse } from 'next/server';
 import axios from 'axios';
 
 const API = process.env.API;
@@ -19,7 +18,7 @@ const getWeekDates = () => {
   };
 };
 
-export async function GET() {
+export async function getCommitHistory() {
   const { startDate, endDate } = getWeekDates();
 
   try {
@@ -73,9 +72,8 @@ export async function GET() {
      formattedData,
       totalCommits
     }
-    return NextResponse.json(finalPayload);
+    return finalPayload;
   } catch (error) {
     console.error('Error fetching commits:', error);
-    return NextResponse.json({ error: 'Error fetching commits' }, { status: 500 });
   }
 }
