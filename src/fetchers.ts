@@ -22,31 +22,30 @@ export async function getCommitHistory() {
   const { startDate, endDate } = getWeekDates();
 
   try {
-    const repoResponse = await axios.get(`https://api.github.com/users/${API_USERNAME}/repos`, {
+    const repoResponse = await fetch(`https://api.github.com/users/${API_USERNAME}/repos`, {
       headers: {
         Authorization: `token ${API}`,
       },
     });
-
-    const repos = repoResponse.data;
+    const repoJson = await repoResponse.json();
     let totalCommits = 0;
     const dailyCommits: { [date: string]: number } = {};
 
-    const commitPromises = repos.map((repo: any) =>
-      axios.get(
+    const commitsResponses = await Promise.all(repoJson.map(async(repo: any) => {
+      const response = await fetch(
         `https://api.github.com/repos/${API_USERNAME}/${repo.name}/commits?since=${startDate}&until=${endDate}`,
         {
           headers: {
             Authorization: `token ${API}`,
           },
         }
-      )
-    );
+      );
+      return await response.json()
+    }));
 
-    const commitsResponses = await Promise.all(commitPromises);
-
+    console.log(commitsResponses)
     commitsResponses.forEach((commitsResponse: any) => {
-      const commits = commitsResponse.data;
+      const commits = commitsResponse;
 
       commits.forEach((commit: any) => {
         const commitDate = new Date(commit.commit.author.date).toISOString().split('T')[0];
@@ -66,10 +65,10 @@ export async function getCommitHistory() {
       {
         date: commit.date,
         count: commit.count,
-      } 
+      }
     ))
     const finalPayload = {
-     formattedData,
+      formattedData,
       totalCommits
     }
     return finalPayload;
