@@ -25,7 +25,7 @@ export default function Projects() {
                     <div className="grid grid-cols-1 sm:grid-cols-1 gap-4 rounded-lg">
                         {Object.entries(projects).map(([key, { src, alt, url, name }]) => (
                             <div key={key} className="relative">
-                                <div className="relative bg-gradient  border rounded overflow-hidden">
+                                <div className="relative bg-gradient hover:border-neutral-400 duration-[0.3] transition-all border rounded overflow-hidden">
                                     <Link href={url} target="_blank">
                                     <span className="text-md flex justify-center">{name}</span>
                                         <Image src={src}
