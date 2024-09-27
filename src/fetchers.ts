@@ -20,7 +20,6 @@ const getWeekDates = () => {
 
 export async function getCommitHistory() {
   const { startDate, endDate } = getWeekDates();
-
   try {
     const repoResponse = await fetch(`https://api.github.com/users/${API_USERNAME}/repos`, {
       headers: {
@@ -31,7 +30,7 @@ export async function getCommitHistory() {
     let totalCommits = 0;
     const dailyCommits: { [date: string]: number } = {};
 
-    const commitsResponses = await Promise.all(repoJson.map(async(repo: any) => {
+    const commitsResponses = await Promise.all(repoJson.map(async (repo: any) => {
       const response = await fetch(
         `https://api.github.com/repos/${API_USERNAME}/${repo.name}/commits?since=${startDate}&until=${endDate}`,
         {
@@ -43,7 +42,6 @@ export async function getCommitHistory() {
       return await response.json()
     }));
 
-    console.log(commitsResponses)
     commitsResponses.forEach((commitsResponse: any) => {
       const commits = commitsResponse;
 
