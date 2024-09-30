@@ -9,7 +9,7 @@ const getWeekDates = () => {
   endDate.setHours(23, 59, 59, 999);
 
   const startDate = new Date(now);
-  startDate.setDate(now.getDate() - 7);
+  startDate.setDate(now.getDate() - 6);
   startDate.setHours(0, 0, 0, 0);
 
   return {

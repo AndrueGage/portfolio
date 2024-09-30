@@ -22,6 +22,7 @@ import {
 } from '@/components/ui/chart';
 
 export default function CommitCard({data} :any) {
+
   return (
     <Card className="sm:col-span-2 w-full lg:max-w-[358px]  rounded-xl flex flex-col">
       <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2 [&>div]:flex-1">
@@ -52,7 +53,7 @@ export default function CommitCard({data} :any) {
                 top: 10,
                 right: 10,
                 left: 10,
-                bottom: 30,
+                bottom: 10,
               }}
             >
               <CartesianGrid
@@ -71,7 +72,8 @@ export default function CommitCard({data} :any) {
                 axisLine={false}
                 tickMargin={10}
                 tickFormatter={(value) => {
-                  return new Date(value).toLocaleDateString('en-US', {
+                  const date = new Date(value);
+                  return date.toLocaleDateString('en-US', {
                     weekday: 'short',
                   });
                 }}
