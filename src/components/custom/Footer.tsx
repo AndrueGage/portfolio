@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="bottom-0 right-0 flex gap-2 mt-6 "> 
             {Object.entries(svgLinks).map(([key, { src, alt, url }]) => (
                 <a href={url} key={key} target="_blank" rel="noopener noreferrer">
-                    <div className="h-6 w-8 relative">
+                    <div className="h-6 w-8 relative transform transition-transform ease-in-out duration-300 hover:scale-110">
                         <Image priority src={src} alt={alt} layout="fill" objectFit="contain" />
                     </div>
                 </a>
