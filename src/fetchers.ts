@@ -6,12 +6,10 @@ const API_USERNAME = process.env.API_USER;
 const getWeekDates = () => {
   const now = new Date();
   const endDate = new Date(now);
-  endDate.setHours(23, 59, 59, 999);
 
   const startDate = new Date(now);
   startDate.setDate(now.getDate() - 6);
   startDate.setHours(0, 0, 0, 0);
-
   return {
     startDate: startDate.toISOString(),
     endDate: endDate.toISOString(),
@@ -44,10 +42,10 @@ export async function getCommitHistory() {
 
     commitsResponses.forEach((commitsResponse: any) => {
       const commits = commitsResponse;
-
+      // console.log(commitsResponses);
       commits.forEach((commit: any) => {
         const commitDate = new Date(commit.commit.author.date).toISOString().split('T')[0];
-
+        // console.log(commits)
         if (commitDate >= startDate.split('T')[0] && commitDate <= endDate.split('T')[0]) {
           dailyCommits[commitDate] = (dailyCommits[commitDate] || 0) + 1;
         }
@@ -65,12 +63,16 @@ export async function getCommitHistory() {
         count: commit.count,
       }
     ))
+    console.log(formattedData);
     const finalPayload = {
       formattedData,
       totalCommits
+
     }
-    return finalPayload;
+    console.log(finalPayload);
+    return finalPayload;  
   } catch (error) {
     console.error('Error fetching commits:', error);
   }
+  
 }

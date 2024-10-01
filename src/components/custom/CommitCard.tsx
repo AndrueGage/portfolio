@@ -51,8 +51,8 @@ export default function CommitCard({data} :any) {
               data={data.formattedData}
               margin={{
                 top: 10,
-                right: 10,
-                left: 10,
+                right: 25,
+                left: 25,
                 bottom: 10,
               }}
             >
@@ -72,11 +72,13 @@ export default function CommitCard({data} :any) {
                 axisLine={false}
                 tickMargin={10}
                 tickFormatter={(value) => {
-                  const date = new Date(value);
-                  return date.toLocaleDateString('en-US', {
+                  const date = new Date(`${value}T00:00:00Z`);
+                  return date.toLocaleString('en-US', {
                     weekday: 'short',
+                    timeZone: 'UTC'
                   });
                 }}
+                
               />
               <Line
                 dataKey="count"
@@ -95,10 +97,12 @@ export default function CommitCard({data} :any) {
                   <ChartTooltipContent
                     indicator="line"
                     labelFormatter={(value) => {
-                      return new Date(value).toLocaleDateString('en-US', {
+                      const date = new Date(`${value}T00:00:00Z`);
+                      return  date.toLocaleDateString('en-US', {
                         day: 'numeric',
                         month: 'long',
                         year: 'numeric',
+                        timeZone: 'UTC'
                       });
                     }}
                   />
