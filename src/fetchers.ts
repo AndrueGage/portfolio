@@ -1,4 +1,3 @@
-import axios from 'axios';
 
 const API = process.env.API;
 const API_USERNAME = process.env.API_USER;
@@ -42,10 +41,10 @@ export async function getCommitHistory() {
 
     commitsResponses.forEach((commitsResponse: any) => {
       const commits = commitsResponse;
-      // console.log(commitsResponses);
+
       commits.forEach((commit: any) => {
         const commitDate = new Date(commit.commit.author.date).toISOString().split('T')[0];
-        // console.log(commits)
+
         if (commitDate >= startDate.split('T')[0] && commitDate <= endDate.split('T')[0]) {
           dailyCommits[commitDate] = (dailyCommits[commitDate] || 0) + 1;
         }
@@ -69,7 +68,6 @@ export async function getCommitHistory() {
       totalCommits
 
     }
-    console.log(finalPayload);
     return finalPayload;  
   } catch (error) {
     console.error('Error fetching commits:', error);
