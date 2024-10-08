@@ -21,6 +21,7 @@ export async function getCommitHistory() {
     const repoResponse = await fetch(`https://api.github.com/users/${API_USERNAME}/repos`, {
       headers: {
         Authorization: `token ${API}`,
+        cache: 'no-cache'
       },
     });
     const repoJson = await repoResponse.json();
@@ -33,6 +34,7 @@ export async function getCommitHistory() {
         {
           headers: {
             Authorization: `token ${API}`,
+            cache: 'no-cache'
           },
         }
       );
