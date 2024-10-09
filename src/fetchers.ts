@@ -22,7 +22,7 @@ export async function getCommitHistory() {
       headers: {
         Authorization: `token ${API}`,
       },
-      cache: 'no-store'
+      next: { revalidate: 0 }
     });
     const repoJson = await repoResponse.json();
     let totalCommits = 0;
@@ -35,7 +35,7 @@ export async function getCommitHistory() {
           headers: {
             Authorization: `token ${API}`,
           },
-          cache: 'no-store'
+          next: { revalidate: 0 }
         }
       );
       return await response.json()
