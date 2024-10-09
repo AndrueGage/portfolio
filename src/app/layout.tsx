@@ -30,17 +30,15 @@ export default function RootLayout({
         )}
       >
         <Analytics />
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {/* <Template> */}
-            {children}
-            {/* </Template> */}
-          </ThemeProvider>
-    </body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html >
   );
 }

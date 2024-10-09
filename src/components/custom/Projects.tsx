@@ -29,7 +29,7 @@ export default function Projects() {
                                     <Link href={url} target="_blank">
                                         <Image src={src}
                                             alt={alt}
-                                            className="lg:w-full lg:h-[200px]"
+                                            className="lg:w-full lg:h-[180.5px]"
                                         />
                                         <span className="text-md flex justify-center">{name}</span>
                                     </Link>
