@@ -27,11 +27,11 @@ export default function Projects() {
                             <div key={key} className="relative">
                                 <div className="relative bg-gradient hover:border-neutral-400 duration-[0.3] transition-all border rounded overflow-hidden">
                                     <Link href={url} target="_blank">
-                                    <span className="text-md flex justify-center">{name}</span>
                                         <Image src={src}
                                             alt={alt}
-                                            className="w-full h-full object-cover"
+                                            className="w-full h-[200px]"
                                         />
+                                        <span className="text-md flex justify-center">{name}</span>
                                     </Link>
                                 </div>
                             </div>

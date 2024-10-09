@@ -4,8 +4,7 @@ import './globals.css';
 import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Analytics } from "@vercel/analytics/react"
-import PageContainer from "@/components/custom/PageContainer";
-import Navbar from "@/components/custom/Navbar";
+
 
 const fontSans = FontSans({
   subsets: ["latin"],
