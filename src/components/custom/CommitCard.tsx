@@ -81,7 +81,7 @@ export default function CommitCard({data} :any) {
                 
               />
               <Line
-                dataKey="count"
+                dataKey="Count"
                 type="monotone"
                 stroke="var(--color-resting)"
                 strokeWidth={2}
