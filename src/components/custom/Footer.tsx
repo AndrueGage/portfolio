@@ -34,7 +34,7 @@ export default function Footer() {
                   </div>
                 </a>
               </TooltipTrigger>
-              <TooltipContent className="rounded-full py-2 ">
+              <TooltipContent className="rounded-full py-2">
                 <p>{key}</p>
               </TooltipContent>
             </Tooltip>
