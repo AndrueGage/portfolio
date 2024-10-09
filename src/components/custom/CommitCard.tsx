@@ -40,7 +40,7 @@ export default function CommitCard({data} :any) {
         <ChartContainer
           config={{
             resting: {
-              label: 'Commits',
+              label: 'COUNT',
               color: 'hsl(var(--chart-1))',
             },
           }}
@@ -81,8 +81,9 @@ export default function CommitCard({data} :any) {
                 
               />
               <Line
-                dataKey="Count"
+                dataKey="count"
                 type="monotone"
+                name="Commit Count"
                 stroke="var(--color-resting)"
                 strokeWidth={2}
                 dot={false}
