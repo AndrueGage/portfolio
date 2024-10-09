@@ -18,11 +18,11 @@ const getWeekDates = () => {
 export async function getCommitHistory() {
   const { startDate, endDate } = getWeekDates();
   try {
-    const repoResponse = await fetch(`https://api.github.com/users/${API_USERNAME}/repos`, {
+    const repoResponse = await fetch(`https://api.github.com/users/${API_USERNAME}/repos`,  {
       headers: {
         Authorization: `token ${API}`,
-        cache: 'no-cache'
       },
+      cache: 'no-store'
     });
     const repoJson = await repoResponse.json();
     let totalCommits = 0;
@@ -34,8 +34,8 @@ export async function getCommitHistory() {
         {
           headers: {
             Authorization: `token ${API}`,
-            cache: 'no-cache'
           },
+          cache: 'no-store'
         }
       );
       return await response.json()
