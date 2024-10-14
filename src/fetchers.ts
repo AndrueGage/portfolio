@@ -15,10 +15,22 @@ const getWeekDates = () => {
   };
 };
 
+const getAllDatesInRange = (startDate: Date, endDate: Date) => {
+  const dates = [];
+  const currentDate = new Date(startDate);
+
+  while (currentDate <= endDate) {
+    dates.push(new Date(currentDate).toISOString().split('T')[0]); // Store date as string (YYYY-MM-DD)
+    currentDate.setDate(currentDate.getDate() + 1); // Move to the next day
+  }
+
+  return dates;
+};
+
 export async function getCommitHistory() {
   const { startDate, endDate } = getWeekDates();
   try {
-    const repoResponse = await fetch(`https://api.github.com/users/${API_USERNAME}/repos`,  {
+    const repoResponse = await fetch(`https://api.github.com/users/${API_USERNAME}/repos`, {
       headers: {
         Authorization: `token ${API}`,
       },
@@ -26,7 +38,13 @@ export async function getCommitHistory() {
     });
     const repoJson = await repoResponse.json();
     let totalCommits = 0;
-    const dailyCommits: { [date: string]: number } = {};
+
+    
+    const allDates = getAllDatesInRange(new Date(startDate), new Date(endDate));
+    const dailyCommits: { [date: string]: number } = allDates.reduce((acc, date) => {
+      acc[date] = 0;
+      return acc;
+    }, {} as { [date: string]: number }); 
 
     const commitsResponses = await Promise.all(repoJson.map(async (repo: any) => {
       const response = await fetch(
@@ -38,7 +56,7 @@ export async function getCommitHistory() {
           next: { revalidate: 0 }
         }
       );
-      return await response.json()
+      return await response.json();
     }));
 
     commitsResponses.forEach((commitsResponse: any) => {
@@ -55,24 +73,19 @@ export async function getCommitHistory() {
       totalCommits += commits.length;
     });
 
-    const weekData = Object.keys(dailyCommits)
-      .map(date => ({ date, count: dailyCommits[date] }))
-      .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-    const formattedData = weekData.map((commit: { date: string; count: number }) => (
-      {
-        date: commit.date,
-        count: commit.count,
-      }
-    ))
-    console.log(formattedData);
-    const finalPayload = {
-      formattedData,
-      totalCommits
+    const weekData = allDates.map(date => ({
+      date,
+      count: dailyCommits[date], 
+    }));
 
-    }
+    const finalPayload = {
+      formattedData: weekData,
+      totalCommits
+    };
+
+    console.log(finalPayload);
     return finalPayload;  
   } catch (error) {
     console.error('Error fetching commits:', error);
   }
-  
 }
