@@ -14,7 +14,7 @@ export default function Navbar() {
                                 <Link href='#contact'>Contact</Link>
                             </li>
                             <li className="text-lg md:text-xl border rounded-xl border-solid border-black p-2 w-full md:w-32 text-center bg-gradient">
-                                <a href="/Andrue_Desmarais_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+                                <a href="/Andrue_Desmarais_CV.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
                             </li>
                             <li className="w-full md:w-auto">      
                             </li>
