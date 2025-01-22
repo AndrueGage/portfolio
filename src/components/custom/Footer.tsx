@@ -14,7 +14,7 @@ const svgLinks = {
   Github: { src: github, alt: 'Github Icon', url: 'https://github.com/AndrueGage' },
   LinkedIn: { src: linkedin, alt: 'LinkedIn Icon', url: 'https://www.linkedin.com/in/andrue-desmarais/' },
   Instagram: { src: instagram, alt: 'Instagram Icon', url: 'https://www.instagram.com/androogage/?hl=en' },
-  Resume: { src: null, alt: 'Resume Icon', url: '/Andrue_Desmarais_Resume.pdf' }
+  Resume: { src: null, alt: 'Resume Icon', url: '/Andrue_Desmarais_CV.pdf' }
 };
 
     export default function Footer() {
